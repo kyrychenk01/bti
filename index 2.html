@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Підбір послуги | БТІ Миронівка</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#000;--card:#141417;--line:#2b2b33;--tx:#fff;--mu:#a9a9b6;--blue:#2f66dd;--green:#247a2f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:transparent;color:var(--tx);font:400 18px/1.55 Rubik,system-ui,"Segoe UI",Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#09090b;z-index:9}
+a{color:inherit}
+:focus-visible{outline:3px solid #8fb0ff;outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:760px;margin:0 auto;padding:18px 20px}
+.logo{font-weight:700;letter-spacing:.02em;text-transform:uppercase;text-decoration:none}
+.top a.back{color:var(--mu);font-size:15px;text-decoration:none}
+main{max-width:760px;margin:0 auto;padding:12px 20px 90px}
+.bar{height:6px;border-radius:9px;background:#1d1d23;overflow:hidden;margin-bottom:26px}
+.bar i{display:block;height:100%;width:0;background:var(--blue);border-radius:9px;transition:width .4s ease}
+.step{animation:fade .35s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pill{display:inline-block;padding:7px 16px;border:1px solid var(--line);border-radius:10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:18px}
+h1,h2{font-weight:300;line-height:1.15;margin:0 0 12px}
+h1{font-size:clamp(34px,7vw,52px)}h2{font-size:clamp(26px,5vw,38px)}
+.lead{color:var(--mu);margin:0 0 26px}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:18px 20px;border-radius:20px;background:var(--card);border:1px solid var(--line);color:var(--tx);font:500 18px Rubik,Arial,sans-serif;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}
+.opt:hover{transform:translateY(-2px);border-color:var(--blue);background:#1a1a20}
+.opt .e{font-size:26px;width:44px;height:44px;display:grid;place-items:center;background:#202027;border-radius:12px;flex:none}
+.opt small{display:block;color:var(--mu);font-weight:400;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:99px;font:600 17px Rubik,Arial,sans-serif;color:#fff;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.g{background:var(--green)}.b{background:var(--blue)}.d{background:#15151a;border:1px solid var(--line)}
+.back-btn{background:none;border:0;color:var(--mu);font:400 16px Rubik,Arial,sans-serif;cursor:pointer;padding:14px 0 0}
+.res{display:grid;gap:12px;margin:22px 0 28px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.rc.main{border-color:var(--blue);background:#10182b}
+.rc h3{margin:0 0 6px;font-size:21px;font-weight:500}
+.rc p{margin:0;color:var(--mu);font-size:16px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:10px;background:#1f3d86;color:#cfe0ff}
+.tag.opt2{background:#26262e;color:var(--mu)}
+.docs{background:var(--card);border-radius:22px;padding:22px;margin-bottom:22px}
+.docs h3{margin:0 0 10px;font-size:19px;font-weight:500}
+.docs ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;color:#d4d4dd;font-size:16px}
+.docs li{display:flex;gap:12px}.docs li::before{content:"\2713";color:#58d273;font-weight:700}
+.note{color:var(--mu);font-size:14px;margin:0 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:8;height:56px;padding:0 24px;border-radius:99px;background:var(--green);display:flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.6);white-space:nowrap}
+.fab::before{content:"\260E"}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.cm{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.78)}.cm[hidden]{display:none}.cb2{position:relative;width:100%;max-width:420px;padding:34px 26px 28px;border-radius:28px;background:#141417;border:1px solid #2b2b33;text-align:center;color:#fff;font-family:Rubik,Arial,sans-serif}.cb2 p{margin:0 0 6px;color:#a9a9b6;font-size:15px}.cb2 b{display:block;font-size:34px;font-weight:500;letter-spacing:.02em;margin-bottom:22px}.cb2 .row{display:grid;gap:10px}.cb2 .x{position:absolute;top:10px;right:14px;background:none;border:0;color:#a9a9b6;font-size:30px;cursor:pointer;line-height:1}.cb2 small{display:block;margin-top:14px;color:#a9a9b6;font-size:14px;min-height:20px}
+</style>
+</head>
+<body>
+<div class="top"><a class="logo" href="#" id="home">БТІ Миронівка</a><a class="back" id="site" href="https://kyrychenk01.github.io/bti/">← На сайт</a></div>
+<main>
+<div class="bar" role="progressbar" aria-label="Прогрес" aria-valuemin="0" aria-valuemax="100"><i id="bar"></i></div>
+<div id="app"></div>
+</main>
+<a class="fab" href="tel:+380673994084" aria-label="Зателефонувати 067 399 40 84">067 399 40 84</a>
+<script>
+(function(){
+var app=document.getElementById('app'),bar=document.getElementById('bar');
+var A={};var path=[];
+var Q={
+type:{t:'Що потрібно оформити?',s:'Оберіть, що найближче до вашої ситуації.',o:[['🏠','Будинок','house'],['🏢','Квартира або приміщення','flat'],['🌱','Земельна ділянка','land'],['🤔','Не знаю, потрібна порада','unk']]},
+house:{t:'Чи є прибудови або будівництво без документів?',s:'Наприклад, добудований поверх, гараж чи літня кухня без дозволу.',o:[['⚠️','Так, є','yes'],['🤷','Не впевнений(-а)','maybe'],['✅','Ні, усе за документами','no']]},
+flat:{t:'Чи є технічний паспорт?',s:'Технічний паспорт часто потрібен для продажу чи спадщини.',o:[['📄','Є, актуальний','have'],['🕰️','Є, але старий','old'],['❌','Немає','none']]},
+land:{t:'Що потрібно зробити із землею?',s:'',o:[['📝','Приватизувати ділянку','priv'],['📍','Отримати витяг з ДЗК','dzk'],['🧱','Будуватися на ділянці','build']]},
+why:{t:'Для чого потрібні документи?',s:'Це допоможе підказати, чи знадобиться оцінка.',o:[['💰','Продаж або купівля','sell'],['👪','Спадщина або дарування','inh'],['🏦','Банк чи кредит','bank'],['📁','Просто привести документи до ладу','tidy']]}
+};
+function set(p,pct){bar.style.width=pct+'%';bar.parentNode.setAttribute('aria-valuenow',pct)}
+function intro(){A={};path=[];set(0,0);
+app.innerHTML='<div class="step"><span class="pill">Підбір послуги</span><h1>Підкажемо, які документи вам потрібні</h1><p class="lead">Дайте відповідь на 3 прості питання, і ми покажемо, з чого почати та що підготувати. Це займе хвилину.</p><button class="btn b" data-go="type">Почати</button></div>';}
+function ask(key){var q=Q[key];path.push(key);
+var total=(A.type==='unk')?2:3,pct=Math.round((path.length-1)/(total)*100);
+set(pct,pct);
+var h='<div class="step"><h2>'+q.t+'</h2>'+(q.s?'<p class="lead">'+q.s+'</p>':'<p class="lead"></p>')+'<div class="opts">';
+q.o.forEach(function(o){h+='<button class="opt" data-k="'+key+'" data-v="'+o[2]+'"><span class="e">'+o[0]+'</span><span>'+o[1]+'</span></button>'});
+h+='</div>'+(path.length>1?'<button class="back-btn" data-back="1">← Назад</button>':'')+'</div>';
+app.innerHTML=h;window.scrollTo({top:0,behavior:'smooth'});}
+function result(){set(100,100);
+var main=[],extra=[],docs=['Паспорт і ІПН власника','Документи на право власності, якщо вони є','Старі технічні паспорти, плани чи інші наявні папери'];
+var T={tp:['Технічний паспорт','Виготовлення технічного паспорта на об’єкт нерухомості.'],
+uz:['Узаконення самочинного будівництва','Привести документи у відповідність за спрощеною процедурою.'],
+bp:['Будівельний паспорт','Оформлення будівельного паспорта забудови земельної ділянки.'],
+dzk:['Витяг з ДЗК','Витяг з Державного земельного кадастру на ділянку.'],
+pr:['Приватизація землі','Допоможемо оформити ділянку у власність.'],
+ev:['Експертно-грошова оцінка','Оцінка вартості нерухомого майна.'],
+cons:['Консультація','Розкажіть про ситуацію по телефону, і ми підкажемо, з чого почати.']};
+var t=A.type;
+if(t==='house'){ if(A.house==='no'){main.push('tp')}else{main.push('uz');main.push('tp')} }
+else if(t==='flat'){ if(A.flat==='have'){main.push('cons')}else{main.push('tp')} }
+else if(t==='land'){ docs.push('Документи на землю або кадастровий номер, якщо є');
+  if(A.land==='priv'){main.push('pr');main.push('dzk')}else if(A.land==='dzk'){main.push('dzk')}else{main.push('bp');main.push('dzk')} }
+else{main.push('cons')}
+if(A.why==='inh'||A.why==='bank'){extra.push(['ev','Може знадобитись для спадщини, дарування чи банку.'])}
+else if(A.why==='sell'){extra.push(['ev','За потреби допоможе визначити вартість при продажу.'])}
+var h='<div class="step"><span class="pill">Результат</span><h2>Вам, імовірно, підійде:</h2><div class="res">';
+main.forEach(function(k,i){h+='<div class="rc main"><span class="tag">'+(i===0?'З цього почніть':'Також')+'</span><h3>'+T[k][0]+'</h3><p>'+T[k][1]+'</p></div>'});
+extra.forEach(function(e){h+='<div class="rc"><span class="tag opt2">За потреби</span><h3>'+T[e[0]][0]+'</h3><p>'+e[1]+'</p></div>'});
+h+='</div><div class="docs"><h3>Що варто підготувати</h3><ul>'+docs.map(function(d){return '<li>'+d+'</li>'}).join('')+'</ul></div>';
+h+='<p class="note">Це загальна підказка, а не юридичний висновок. Точний перелік документів залежить від вашої ситуації, його уточнимо по телефону.</p>';
+h+='<div class="cta"><a class="btn g" href="tel:+380673994084">Зателефонувати 067 399 40 84</a><a class="btn d" href="https://www.instagram.com/bti_myronivka?dlrf=MXUza2w1azMwemFudA==" target="_blank" rel="noopener">Instagram</a><a class="btn d" href="https://www.tiktok.com/@svitlana_bti?_r=1&_t=ZS-9Af7FVfTfQT" target="_blank" rel="noopener">TikTok</a></div>';
+h+='<button class="back-btn" data-go="restart">↺ Пройти ще раз</button><p class="note" style="margin-top:14px">Працюємо Пн–Пт 8:00–17:00, у Сб–Нд за домовленістю.</p></div>';
+app.innerHTML=h;window.scrollTo({top:0,behavior:'smooth'});}
+app.addEventListener('click',function(e){
+var b=e.target.closest('button');if(!b)return;
+if(b.dataset.go==='type'){path=[];ask('type')}
+else if(b.dataset.go==='restart'){intro()}
+else if(b.dataset.back){path.pop();var prev=path.pop();if(prev)ask(prev);else intro()}
+else if(b.dataset.k){var k=b.dataset.k,v=b.dataset.v;A[k]=v;
+ if(k==='type'){ask(v==='unk'?'why':v)}
+ else if(k==='why'){result()}
+ else{ask('why')}}
+});
+document.getElementById('home').addEventListener('click',function(e){e.preventDefault();intro()});
+intro();
+})();
+</script>
+<div class="cm" id="cm" hidden role="dialog" aria-modal="true" aria-label="Телефон"><div class="cb2"><button class="x" id="cx" aria-label="Закрити">×</button><p>Зателефонуйте нам</p><b id="cn">067 399 40 84</b><div class="row"><button class="btn b" id="cc">Скопіювати номер</button><a class="btn g" id="ct" href="tel:+380673994084" target="_blank" rel="noopener">Відкрити дзвінок</a></div><small id="cs"></small></div></div>
+<script>
+(function(){
+var m=document.getElementById('cm'),s=document.getElementById('cs');
+function fmt(h){return h.replace(/\D/g,'').slice(-10).replace(/(\d{3})(\d{3})(\d{2})(\d{2})/,'$1 $2 $3 $4')}
+var framed=false;try{framed=window.self!==window.top}catch(e){framed=true}
+var touch=!!(window.matchMedia&&matchMedia('(pointer:coarse)').matches);
+function show(h){document.getElementById('cn').textContent=fmt(h);document.getElementById('ct').href=h;s.textContent='';m.hidden=false;document.getElementById('cc').focus()}
+function hide(){m.hidden=true}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a||a.id==='ct')return;if(touch&&!framed)return;e.preventDefault();show(a.getAttribute('href'))});
+document.getElementById('cx').onclick=hide;
+m.addEventListener('click',function(e){if(e.target===m)hide()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')hide()});
+document.getElementById('cc').onclick=function(){var n=document.getElementById('cn').textContent.replace(/\s/g,'');var ok=function(){s.textContent='Номер скопійовано ✓'};var fb=function(){try{var t=document.createElement('textarea');t.value=n;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);ok()}catch(x){s.textContent='Продиктуйте: '+n}};try{navigator.clipboard.writeText(n).then(ok,fb)}catch(x){fb()}};
+})();
+</script>
+</body>
+</html>
